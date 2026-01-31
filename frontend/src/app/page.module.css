@@ -1,0 +1,53 @@
+.hero {
+  text-align: center;
+  padding: 48px 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: -1px;
+}
+
+.description {
+  font-size: 18px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.loading {
+  text-align: center;
+  padding: 80px 20px;
+  color: #999;
+  font-size: 16px;
+}
+
+.error {
+  text-align: center;
+  padding: 80px 20px;
+  color: #d32f2f;
+  font-size: 16px;
+}
+
+.error small {
+  display: block;
+  margin-top: 8px;
+  color: #999;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 32px 0;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+}

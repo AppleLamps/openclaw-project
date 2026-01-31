@@ -1,0 +1,29 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 32px;
+  padding: 32px 0;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 24px;
+    padding: 24px 0;
+  }
+}
+
+.empty {
+  text-align: center;
+  padding: 80px 20px;
+  color: #666;
+}
+
+.empty p {
+  margin: 8px 0;
+}
+
+.hint {
+  font-size: 14px;
+  color: #999;
+}
