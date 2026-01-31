@@ -359,6 +359,7 @@ follows
 - Excellent developer experience
 - Built-in routing and optimization
 - Server-side rendering capability
+- **Updated to Next.js 15.0.8** for security patches
 
 ### Why Node.js?
 - JavaScript across stack

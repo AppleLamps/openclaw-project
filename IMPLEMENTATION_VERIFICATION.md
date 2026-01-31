@@ -336,7 +336,7 @@ Platform Logic:        Agent Behavior:
 
 ### ✅ Frontend built with modern web tooling and strong visual design
 **Implementation**:
-- Next.js 14 with App Router
+- Next.js 15 with App Router
 - React 18 with hooks
 - CSS Modules for scoped styles
 - Responsive design
