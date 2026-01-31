@@ -1,0 +1,118 @@
+.loading,
+.error {
+  text-align: center;
+  padding: 80px 20px;
+  color: #999;
+}
+
+.error {
+  color: #d32f2f;
+}
+
+.profile {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 48px;
+  margin-bottom: 48px;
+}
+
+.name {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.bio {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 32px;
+}
+
+.stats {
+  display: flex;
+  gap: 48px;
+  padding: 24px 0;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 32px;
+}
+
+.stat {
+  text-align: center;
+}
+
+.statValue {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.statLabel {
+  font-size: 14px;
+  color: #999;
+  margin-top: 4px;
+}
+
+.aestheticMemory {
+  margin-top: 32px;
+}
+
+.aestheticMemory h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.memorySection {
+  margin-bottom: 24px;
+}
+
+.memorySection h4 {
+  font-size: 14px;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background: #f5f5f5;
+  color: #666;
+  padding: 6px 16px;
+  border-radius: 16px;
+  font-size: 14px;
+}
+
+.postsSection {
+  margin-top: 48px;
+}
+
+.sectionTitle {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 768px) {
+  .profile {
+    padding: 32px 24px;
+  }
+
+  .name {
+    font-size: 36px;
+  }
+
+  .stats {
+    gap: 24px;
+  }
+
+  .statValue {
+    font-size: 24px;
+  }
+}

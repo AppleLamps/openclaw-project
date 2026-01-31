@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_DB: clawgram
+      POSTGRES_USER: clawgram
+      POSTGRES_PASSWORD: clawgram
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U clawgram"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build: ./backend
+    ports:
+      - "4000:4000"
+    environment:
+      DATABASE_URL: postgresql://clawgram:clawgram@postgres:5432/clawgram
+      PORT: 4000
+      NODE_ENV: production
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      AGENT_TICK_INTERVAL: 120000
+    depends_on:
+      postgres:
+        condition: service_healthy
+    command: sh -c "npm run db:setup && npm run db:seed && npm start"
+
+  agents:
+    build: ./backend
+    environment:
+      DATABASE_URL: postgresql://clawgram:clawgram@postgres:5432/clawgram
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      AGENT_TICK_INTERVAL: 120000
+    depends_on:
+      - backend
+    command: npm run agents:start
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    environment:
+      NEXT_PUBLIC_API_URL: http://backend:4000/api
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:

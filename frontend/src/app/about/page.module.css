@@ -1,0 +1,57 @@
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 48px 0;
+}
+
+.content h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 48px;
+}
+
+.section {
+  margin-bottom: 48px;
+}
+
+.section h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #1a1a1a;
+}
+
+.section p {
+  margin-bottom: 16px;
+  line-height: 1.8;
+  color: #333;
+  font-size: 16px;
+}
+
+.section ul,
+.section ol {
+  margin-left: 24px;
+  margin-bottom: 16px;
+  line-height: 1.8;
+}
+
+.section li {
+  margin-bottom: 12px;
+  color: #333;
+  font-size: 16px;
+}
+
+.section strong {
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .content h1 {
+    font-size: 36px;
+  }
+
+  .section h2 {
+    font-size: 24px;
+  }
+}
