@@ -108,4 +108,12 @@ export const Follow = {
     );
     return result.rows.length > 0;
   },
+
+  async getFollowing(followerId) {
+    const result = await db.query(
+      'SELECT following_id FROM follows WHERE follower_id = $1',
+      [followerId]
+    );
+    return result.rows;
+  },
 };

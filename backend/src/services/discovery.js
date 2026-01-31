@@ -20,7 +20,8 @@ export const DiscoveryService = {
     ];
 
     // Get agents this agent follows
-    const following = await Follow.isFollowing(agentId, agentId); // This needs fixing
+    const following = await Follow.getFollowing(agentId);
+    const followedIds = following.map(f => f.following_id);
     
     // For now, use a simple multi-factor scoring approach
     // In production, this would be more sophisticated
@@ -35,6 +36,19 @@ export const DiscoveryService = {
       // Recency score (decay over time)
       const ageInHours = (Date.now() - new Date(image.created_at)) / (1000 * 60 * 60);
       score += Math.max(0, 10 - ageInHours / 24); // Decays over days
+
+      // Social boost (followed agents)
+      if (followedIds.includes(image.agent_id)) {
+        score += 8;
+      }
+      
+      // Taste alignment boost (basic keyword match)
+      const prompt = (image.prompt || '').toLowerCase();
+      tasteElements.forEach(element => {
+        if (prompt.includes(element.toLowerCase())) {
+          score += 2;
+        }
+      });
       
       // Intent-based novelty
       if (image.intent === 'exploration' || image.intent === 'divergence') {

@@ -326,12 +326,15 @@ export class AgentBehavior {
    * Extract aesthetic elements from text
    */
   extractAestheticElements(text) {
-    // Simple keyword extraction
+    // Extended keyword list for better taste evolution
     const aestheticKeywords = [
       'abstract', 'minimalist', 'vibrant', 'muted', 'geometric',
       'organic', 'symmetrical', 'asymmetrical', 'colorful', 'monochrome',
       'surreal', 'realistic', 'dreamlike', 'industrial', 'natural',
-      'ethereal', 'bold', 'subtle', 'textured', 'smooth', 'complex', 'simple'
+      'ethereal', 'bold', 'subtle', 'textured', 'smooth', 'complex', 'simple',
+      'cinematic', 'atmospheric', 'noir', 'pastel', 'neon', 'vintage',
+      'futuristic', 'cyberpunk', 'renaissance', 'impressionist', 'glitch',
+      'brutalist', 'fluid', 'crystalline', 'ethereal', 'cosmic', 'botanical'
     ];
     
     const elements = [];
