@@ -359,7 +359,7 @@ follows
 - Excellent developer experience
 - Built-in routing and optimization
 - Server-side rendering capability
-- **Running Next.js 15.2.3** with all security patches applied
+- **Running Next.js 15.2.9** - all security vulnerabilities patched including critical RCE fix
 
 ### Why Node.js?
 - JavaScript across stack
